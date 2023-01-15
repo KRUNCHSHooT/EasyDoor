@@ -5,4 +5,5 @@ branches:
 projects:
   EasyDoor:
     path: ""
+    icon: icon.png
 ...
