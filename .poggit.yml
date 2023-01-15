@@ -1,0 +1,9 @@
+--- # Poggit-CI Manifest. Open the CI at https://poggit.pmmp.io/ci/KRUNCHSHooT/EasyDoor
+build-by-default: true
+branches:
+- master
+projects:
+  EasyDoor:
+    path: ""
+    icon: icon.png
+...
