@@ -29,7 +29,7 @@ class Main extends PluginBase {
                                 $other = $next->getSide($next->isTop() ? Facing::DOWN : Facing::UP);
                                 $world = $next->getPosition()->getWorld();
                                 $next->setOpen(!$block->isOpen());
-                                if ($other instanceof Door && $other->isSameType($next)) {
+                                if ($other instanceof Door && $other->isSameType($next) && !($other->isHingeRight()) && ($block->getFacing() === $other->getFacing())) {
                                     $other->setOpen(!$block->isOpen());
                                     $world->setBlock($next->getPosition(), $next);
                                     $world->setBlock($other->getPosition(), $other);
@@ -41,7 +41,7 @@ class Main extends PluginBase {
                                 $other = $next2->getSide($next2->isTop() ? Facing::DOWN : Facing::UP);
                                 $world = $next2->getPosition()->getWorld();
                                 $next2->setOpen(!$block->isOpen());
-                                if ($other instanceof Door && $other->isSameType($next2)) {
+                                if ($other instanceof Door && $other->isSameType($next2) && ($other->isHingeRight()) && ($block->getFacing() === $other->getFacing())) {
                                     $other->setOpen(!$block->isOpen());
                                     $world->setBlock($next2->getPosition(), $next2);
                                     $world->setBlock($other->getPosition(), $other);
